@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+.message {
+  transition: color 0.2s, background 0.2s;
+}
+
+
 body {
   background: #f7f7f7;
   font-family: Arial, sans-serif;
