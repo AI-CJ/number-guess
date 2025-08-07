@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Number Guessing Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container" role="main" aria-label="Number Guessing Game">
+    <h1>Number Guessing Game</h1>
+    <p>I'm thinking of a number between 1 and 100.</p>
+    <input type="number" id="guess-input" placeholder="Enter your guess" aria-label="Your guess" min="1" max="100"/>
+    <button id="guess-btn">Guess</button>
+    <button id="restart-btn" style="display:none;">Restart</button>
+    <div class="message" id="message" aria-live="polite"></div>
+    <div class="history" id="history"></div>
+    <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
