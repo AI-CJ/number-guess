@@ -7,16 +7,43 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="game-container" role="main" aria-label="Number Guessing Game">
+  <button id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light theme">🌙</button>
+  <main class="game-container" role="main" aria-label="Number Guessing Game">
     <h1>Number Guessing Game</h1>
     <p>I'm thinking of a number between 1 and 100.</p>
-    <input type="number" id="guess-input" placeholder="Enter your guess" aria-label="Your guess" min="1" max="100"/>
-    <button id="guess-btn">Guess</button>
-    <button id="restart-btn" style="display:none;">Restart</button>
+    <div class="input-row">
+      <input
+        type="number"
+        id="guess-input"
+        placeholder="Enter your guess"
+        aria-label="Your guess"
+        min="1"
+        max="100"
+        autocomplete="off"
+      />
+      <button id="guess-btn">Guess</button>
+      <button id="restart-btn" style="display:none;">Restart</button>
+    </div>
     <div class="message" id="message" aria-live="polite"></div>
     <div class="history" id="history"></div>
-    <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
-  </div>
+    <button
+      id="howtoplay"
+      aria-label="How to play"
+      title="How to play"
+      tabindex="0"
+      class="info-btn"
+    >?</button>
+    <div id="howtoplay-popup" class="howtoplay-popup" role="dialog" aria-modal="true" style="display:none;">
+      <strong>How to Play:</strong>
+      <ul>
+        <li>Guess a number between 1 and 100.</li>
+        <li>Feedback will tell if your guess is too high, too low, or correct.</li>
+        <li>Use <b>Enter</b> to guess, <b>R</b> to restart after winning, and the theme button to toggle dark/light mode.</li>
+        <li>Your previous guesses are shown below.</li>
+      </ul>
+      <button id="close-howtoplay" aria-label="Close">Close</button>
+    </div>
+  </main>
   <script src="script.js"></script>
 </body>
 </html>
