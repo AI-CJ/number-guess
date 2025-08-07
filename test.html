@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Number Guess Tests</title>
+</head>
+<body>
+  <h1>Number Guess Game - Function Tests</h1>
+  <pre id="test-results"></pre>
+  <script>
+    // Simulate the game's win/lose logic for testing
+    function checkGuess(secret, guess) {
+      if (guess < 1 || guess > 100 || isNaN(guess)) return 'invalid';
+      if (guess < secret) return 'low';
+      if (guess > secret) return 'high';
+      if (guess === secret) return 'win';
+    }
+
+    function assertEqual(actual, expected, message) {
+      return (actual === expected)
+        ? `✅ ${message}\n`
+        : `❌ ${message} (Expected: ${expected}, Got: ${actual})\n`;
+    }
+
+    let results = '';
+    results += assertEqual(checkGuess(50, 25), 'low', "25 is too low for 50");
+    results += assertEqual(checkGuess(50, 75), 'high', "75 is too high for 50");
+    results += assertEqual(checkGuess(50, 50), 'win', "50 is correct for 50");
+    results += assertEqual(checkGuess(50, 0), 'invalid', "0 is invalid");
+    results += assertEqual(checkGuess(50, 101), 'invalid', "101 is invalid");
+    results += assertEqual(checkGuess(50, 'a'), 'invalid', "non-number is invalid");
+
+    document.getElementById('test-results').textContent = results;
+  </script>
+</body>
+</html>
