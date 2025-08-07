@@ -1,6 +1,6 @@
 # Number Guessing Game
 
-**Live Demo:** [https://elegant-croquembouche-4bc3e9.netlify.app/]
+**Live Demo:** [https://numberguess-aicj.netlify.app/]
 
 ## Overview
 
